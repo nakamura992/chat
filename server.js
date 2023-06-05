@@ -8,16 +8,8 @@ app.use(multer().none());
 app.use(express.static('static'));
 
 app.post('/chat', function(req, res) {
-
-});
-
-const port = 4000;
-app.listen(port, function () {
-  console.log('Node.js Server started: http://localhost:' + port);
-});
-
-app.post('/chat', function(req, res) {
   const message = req.body.message;
+  console.log(req.headers);
   console.log('受信メッセージ:' + message);
   let answer = '(回答できずに困っている)';
 
@@ -30,9 +22,15 @@ app.post('/chat', function(req, res) {
       break;
     }
   }
-
+  
   console.log('返却メッセージ:' + answer);
   res.send({
     answer: answer
   });
+});
+
+// サーバ起動
+const port = 4000;
+app.listen(port, function () {
+  console.log('Node.js Server started: http://localhost:' + port);
 });

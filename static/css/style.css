@@ -25,11 +25,8 @@
   background-color: #7993be;
 }
 
-/* ID指定の先頭は「#」 */
 #chat-area {
-  overflow: scroll;
   padding: 10px;
-
   list-style: none;
 }
 
@@ -41,6 +38,10 @@
 .balloon-r {
   margin-right: 15px;
   justify-content: flex-end;
+}
+
+.add {
+  display: none;
 }
 
 .img-circle {
