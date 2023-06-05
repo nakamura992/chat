@@ -11,13 +11,12 @@ function sayUser(message) {
   '</li>';
   $('#chat-area').append(chatbox);
   $(window).scrollTop($('#chat-area')[0].scrollHeight);
-  $('#user').fadeIn(1000);
 }
 
 function sayOperator(message) {
   const chatbox =
   '<li>' +
-    '<div class="balloon add" id="ope">' +
+    '<div class="balloon" id="ope">' +
       '<img class="img-circle" src="operator.png" alt="image">' +
       '<p class="say">' +
       message +
@@ -26,7 +25,7 @@ function sayOperator(message) {
   '</li>';
   $('#chat-area').append(chatbox);
   $(window).scrollTop($('#chat-area')[0].scrollHeight);
-  $('#ope').fadeIn(1000);
+  // $('#ope').hide().fadeIn(1000);
 }
 
 
@@ -37,7 +36,7 @@ function sendMessage() {
   if (req_message !== '') {
     sayUser(req_message);
   } else {
-    ;
+    return ;
   }
 
 
